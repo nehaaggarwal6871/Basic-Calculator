@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="result">
+          <p id="evaluate"></p>
+          <p id="store-value"></p>
+        </div>
+        <div class="keys">
+          <button class="key" onclick="display('1')">1</button>
+          <button class="key" onclick="display('2')">2</button>
+          <button class="key" onclick="display('3')">3</button>
+          <button class="key" onclick="display('+')">+</button>
+          <button class="key" onclick="display('4')">4</button>
+          <button class="key" onclick="display('5')">5</button>
+          <button class="key" onclick="display('6')">6</button>
+          <button class="key" onclick="display('-')">-</button>
+          <button class="key" onclick="display('7')">7</button>
+          <button class="key" onclick="display('8')">8</button>
+          <button class="key" onclick="display('9')">9</button>
+          <button class="key" onclick="display('*')">*</button>
+          <button class="key" onclick="display('0')">0</button>
+          <button class="key" onclick="display('.')">.</button>
+          <button class="key" onclick="display('/')">/</button>
+          <button class="key" onclick="equal()">=</button>
+          <button class="key" id="clear" onclick="clr()">X</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      let result = document.getElementById("store-value");
+      let key = document.querySelector(".key");
+      let evaluated = document.getElementById("evaluate");
+      //   console.log(key);
+      function display(val) {
+        result.innerText += val;
+        // console.log(val);
+      }
+      function equal() {
+        let x = result.innerHTML;
+        // console.log(typeof 1.7);
+        y = eval(x);
+        if (typeof y == Number && !isNaN(y)) {
+          if (Number.isInteger(y)) {
+            y = eval(x);
+          } else {
+            y = eval(x).toFixed(2);
+          }
+        }
+        evaluated.innerHTML = "=" + y;
+      }
+      function clr() {
+        result.innerHTML = "";
+        evaluated.innerHTML = "";
+      }
+    </script>
+  </body>
+</html>

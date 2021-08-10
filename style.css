@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Slabo 27px', serif;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    place-items: center;
+    background: #47597E;
+}
+
+.card{
+   border-radius: 10px;
+   background: #293B5F;
+   padding: 8px;
+}
+.keys{
+    border-radius: 0 0 10px 10px ;
+    padding: 10px;
+    /* background:#368B85; */
+    background-color: #fff;
+    display: grid;
+    column-gap: 30px;
+    place-items: center;
+    justify-content: center;
+    /* row-gap: 10px; */
+    grid-template-columns: repeat(4,1fr);
+}
+.result{
+    background: #DFEEEA;
+    position: relative;
+    height: 120px;
+    border-radius: 10px 10px 0 0;
+    
+}
+#evaluate{
+    font-size: 3.5rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.key{
+    top: 2px;
+    font-size: 2.7rem;
+    padding: 8px;
+    margin: 5px;
+    height: 4.2rem;
+    width: 4.2rem;
+    border-radius: 50%;
+    background: #DBE6FD;
+    cursor: pointer;
+}
+
+.key:hover{
+    transform: scale(1.1, 1.1);
+}
+#store-value{
+    position: absolute;
+    right: 0;
+    /* bottom: 0; */
+    font-size: 3rem;
+    display: flex;
+    place-items: bottom;
+}
